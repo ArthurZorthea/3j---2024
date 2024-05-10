@@ -64,8 +64,8 @@ span{
     .botoes{
         display: flex;
     }
-    .botao:last-child{
-        border-radius: 0px 20px 20px 0px;
+    .botao:first-child{
+        border-radius: 20px 0px 0px 20px;
         }
         .botao:last-child{
             border-radius: 0px 20px 20px 0px;
