@@ -7,7 +7,8 @@ const tempoObjetivo1 = new Date(2024,11,31,59,59);
 const tempoObjetivo2 = new Date(2024,11,31,59,59);
 const tempoObjetivo3 = new Date(2024,11,31,59,59);
 const tempoObjetivo4 = new Date(2024,11,31,59,59);
-const agora = new Date();
+function calculaTempo(tempoObjetivo){
+    const agora = new Date();
 let segundos;
 let minuto;
 let horas;
@@ -20,7 +21,16 @@ segundos=Math.floor(segundos);
 minutos=Math.floor(minutos);
 horas=Math.floor(horas);
 dias=Math.floor(dias);
-
+ 
+segundos = segundos%60
+minutos = minutos%60
+horas = horas%24
+if (segundos >= 0){
+    return `Faltam $(dias) dias, $(horas) horas, $(minutos) minutos e $(segundos) segundos`
+} else {
+    return `Prazo Finalizado!`
+   }
+}
 
 tempo[0].textContent=`Faltam ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos`
 tempo[1].textContent = agora
