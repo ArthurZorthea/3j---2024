@@ -31,6 +31,11 @@ if (segundos >= 0){
     return `Prazo Finalizado!`
    }
 }
+const tempoUm = calculaTempo(tempoObjetivo1)
+const tempoDois = calculaTempo(tempoObjetivo2)
+const tempoTres = calculaTempo(tempoObjetivo3)
+const tempoQuatro = calculaTempo(tempoObjetivo4)
+
 
 tempo[0].textContent=`Faltam ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos`
 tempo[1].textContent = agora
