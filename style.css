@@ -1,63 +1,99 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meus objetivos do ano</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <section class="conteudo-principal">
-        <h2 class="titulo-principal">Meus objetivos do ano<span>_</span> </h2>
-        <div class="conteudo">
-            <div class="botoes">
-                <button class="botao">Criar projetos</button>
-                <button class="botao">Estudar JavaScript</button>
-                <button class="botao">Montar um portifólio</button>
-                <button class="botao">Estudar outras linguagens</button>
-            </div>
-            <div class="abas-textos">
-                <div class="aba-conteudo">
-                    <h2 class="aba-conteudo-titulo-principal">
-                        Criar 3 projetos usando JavaScript
-                    </h2>
-                    <h3 class="aba-conteudo-titulo-secundario">
-                        TEMPO PARA CONCLUIR O OBJETIVO
-                    </h3>
-                    <div class="contador"></div>
-                </div>
-                <div class="aba-conteudo">
-                    <h2 class="aba-conteudo-titulo-principal">
-                        Fazer 5 cursos de JavaScript  
-                        <!-- Mudei o texto aqui -->
-                    </h2>
-                    <h3 class="aba-conteudo-titulo-secundario">
-                        TEMPO PARA CONCLUIR O OBJETIVO
-                    </h3>
-                    <div class="contador"></div>
-                </div>
-                <div class="aba-conteudo">
-                    <h2 class="aba-conteudo-titulo-principal">
-                        Colocar no meu portifólio meus 3 novos projetos
-                    </h2>
-                    <h3 class="aba-conteudo-titulo-secundario">
-                        TEMPO PARA CONCLUIR O OBJETIVO
-                    </h3>
-                    <div class="contador"></div>
-                </div>
-                <div class="aba-conteudo">
-                    <h2 class="aba-conteudo-titulo-principal">
-                        Fazer outros cursos de outras linguagens
-                    </h2>
-                    <h3 class="aba-conteudo-titulo-secundario">
-                        TEMPO PARA CONCLUIR O OBJETIVO
-                    </h3>
-                    <div class="contador"></div>
-        </div>
-         </div>
-        </div>
-    </section>
-    <script src="main.js"></script>
-</body>
-</html>
+:root{
+    --cor-de-fundo: #1e1e1e;
+    --verde: #5FFF57;
+    --branco: #FFFFFF;
+    --botao-ativo: #3A375E;
+    --botao-inativo: rgba(58,55,94,0.5);
+    --texto-fundo: rgba(58,55,94,0.3);
+}
 
+*{
+    color: var(--branco);
+}
+
+span{
+    color: var(--verde);
+}
+body{
+    background-color: var(--cor-de-fundo);
+}
+.conteudo-principal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+.titulo-principal{
+    text-align: center;
+    width: 100%;
+    font-size: 32px;
+}
+
+.botao{
+    background-color: var(--botao-inativo);
+    color: white;
+    display: flex;
+    justify-content: center;
+    /*Determina a posição horizontal no display flex*/
+    align-items: center;
+    /*Determina a posição vertical no display flex*/
+    width: 100%;
+    font-size: 18px;
+    /*Controla o tamanho da fonte*/
+    padding: 1em ;
+    /* Um afastamento interno */
+    border-bottom: 4px solid var(--botao-ativo);
+    border-left: 2px solid var(--botao-ativo);
+    border-right: 2px solid var(--botao-ativo);
+}
+.botoes{
+ display: block;   
+}
+.botao:first-child{
+    border-radius: 20px 20px 0 0;
+}
+
+.botao:last-child{
+    border-radius: 0px 0px 20px 20px;
+}
+.botao.ativo{
+    background-color: var(--botao-ativo);
+    border-bottom: 2px solid var(--verde) ;
+}
+
+.aba-conteudo{
+    display: none;
+}
+.aba-conteudo.ativo{
+    display: block;
+}
+.abas-textos{
+    background-color: var(--botao-inativo);
+    padding: 40px;
+    border-radius: 15px;
+}
+.aba-conteudo-titulo-principal{
+    font-size: 28px;
+    text-align: center;
+}
+.aba-conteudo-titulo-secundario{
+    text-align: center;
+    color: var(--verde);
+    text-transform: uppercase;
+}
+@media screen and (min-width: 700px){
+    .botoes{
+        display: flex;
+    }
+    .botao:first-child{
+        border-radius: 20px 0 0 20px;
+    }
+    .botao:last-child{
+        border-radius: 0 20px 20px 0;
+    }
+}
